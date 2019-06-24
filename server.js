@@ -26,13 +26,6 @@ const database = {
       joined: new Date()
     }
   ],
-  login: [
-    {
-      id: '987',
-      hash: '',
-      email: 'john@gmail.com'
-    }
-  ]
 }
 
 app.get('/', (req, res) => {
@@ -46,7 +39,6 @@ app.post('/signin', (req,res) => {
   } else {
     res.status(400).json('error logging in')
   }
-  res.json('we\'re at the signin')
 })
 
 app.post('/register', (req, res) => {
@@ -98,17 +90,6 @@ app.put('/image', (req, res) => {
 
 })
 
-
-
-// // Load hash from your password DB.
-// bcrypt.compare("bacon", hash, function(err, res) {
-//   // res == true
-// });
-// bcrypt.compare("veggies", hash, function(err, res) {
-//   // res = false
-// });
-
-
-app.listen (3001, () => {
-  console.log('app is running on port 3001')
+app.listen (3000, () => {
+  console.log('app is running on port 3000')
 })
